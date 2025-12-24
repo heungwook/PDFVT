@@ -1,0 +1,95 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/PDFVT.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary;ForceNoAlign"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "publish-win-x64",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/PDFVT.csproj",
+                "-c", "Release",
+                "-r", "win-x64",
+                "--self-contained", "true"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish-osx-x64",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/PDFVT.csproj",
+                "-c", "Release",
+                "-r", "osx-x64",
+                "--self-contained", "true"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish-osx-arm64",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/PDFVT.csproj",
+                "-c", "Release",
+                "-r", "osx-arm64",
+                "--self-contained", "true"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish-linux-x64",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/PDFVT.csproj",
+                "-c", "Release",
+                "-r", "linux-x64",
+                "--self-contained", "true"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "watch",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "--project",
+                "${workspaceFolder}/PDFVT.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "clean",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "clean",
+                "${workspaceFolder}/PDFVT.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
